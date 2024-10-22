@@ -23,7 +23,12 @@ from django.views.decorators.http import require_POST
 
 def post_detail(request, id):
     post = get_object_or_404(Post, id=id)
-    return render(request, 'five/blog/detail.html', {'post': post})
+    comments = post.comments.filter(active=True)
+    form = CommentForm()
+
+    return render(request, 'five/blog/detail.html', {'post': post, 'comments': comments, 'form': form})
+
+
 
 class PostListView(ListView):
 
@@ -53,4 +58,4 @@ def post_comment(request, post_id):
         comment = form.save(commit=False)
         comment.post = post
         comment.save()
-    return render(request, 'blog/post/comment.html', {'post': post, 'form': form, 'comment': comment})
+    return render(request, 'five/blog/comment.html', {'post': post, 'form': form, 'comment': comment})
