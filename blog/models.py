@@ -40,10 +40,12 @@ class Post(models.Model):
     # https://site.com/blog/post_detail/1
     # ↓
     def get_absolute_url(self):
-        return reverse('blog:post_detail',args=[self.publish.year,
-                                                self.publish.month,
-                                                self.publish.day,
-                                                self.publish.slug,])
+        return reverse('blog:post_detail', args=[self.id])
+    
+    # args=[self.publish.year,
+    #                                             self.publish.month,
+    #                                             self.publish.day,
+    #                                             self.publish.slug,]
 
 class Comment(models.Model):
     post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='comments')
@@ -62,3 +64,6 @@ class Comment(models.Model):
 
     def __str__(self):
         return f'Comment by {self.name} on {self.post}'
+    
+
+    
