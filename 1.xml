@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<goods-catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <good marking-of-the-good="118485">
+        <shop-indices>7</shop-indices>
+        <name>Хлеб 1сорт 450г</name>
+        <price-entry price="0" deleted="true">
+            <number>1</number>
+            <department number="1" />
+        </price-entry>
+        <price-entry price="0" deleted="true">
+            <number>2</number>
+            <department number="1" />
+        </price-entry>
+        <delete-from-cash>true</delete-from-cash>
+    </good>
+</goods-catalog>
