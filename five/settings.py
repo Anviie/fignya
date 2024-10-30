@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'taggit',
     'django.contrib.sites',
     'django.contrib.sitemaps',
+    'django.contrib.postgres',
 ]
 
 MIDDLEWARE = [
@@ -92,9 +93,13 @@ WSGI_APPLICATION = 'five.wsgi.application'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "Anvie",
+        "USER": "Anvie",
+        "PASSWORD": "4819",
+        "HOST": "2.59.161.29",
+        "PORT": "5432",
     }
 }
 
