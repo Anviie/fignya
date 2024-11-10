@@ -8,6 +8,7 @@ urlpatterns = [
     path('tag/<slug:tag_slug>', post_list, name='post_list_by_tag'),
     path('<int:id>', post_detail, name='post_detail'),
     path('<int:post_id>/comment', post_comment, name='post_comment'),
+    path('search/', post_search, name='post_search'),
     
     # path('', PostListView.as_view(), name='post_list'),
 

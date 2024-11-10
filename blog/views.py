@@ -82,4 +82,4 @@ def post_search(request):
                 search=SearchVector('title','body'),
             ).filter(search=query)
             
-    return render(request, 'blog/post/search.html', {'form': form,'query': query, 'results': result})
+    return render(request, 'five/blog/search.html', {'form': form,'query': query, 'results': result})
